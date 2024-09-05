@@ -1,4 +1,64 @@
-
-h2 {
-    background-color: rgb(133, 220, 20);
+*{
+    box-sizing: border-box;
 }
+.gameboard-container {
+    /* border:5px solid rgb(255, 0, 0); */
+    display: flex;
+    flex-wrap: wrap;
+    width:50%;
+    margin: auto;
+   
+}
+
+
+
+
+.block {
+    border:5px solid rgb(0, 0, 0);
+    height:10rem; 
+    flex: 0 0 33.3333%;
+   
+}
+
+
+#b-1 {
+   border-left: none;
+   border-top: none;
+}
+
+
+#b-2 {
+
+    border-top: none;
+ }
+ 
+ #b-3 {
+    border-top: none;
+    border-right:none ;
+ }
+ 
+ 
+ #b-4 {
+    border-left: none;
+ }
+
+ /* b-5// nothing */
+ #b-6 {
+    border-right: none;
+ }
+
+ #b-7 {
+    border-left: none;
+    border-bottom: none;
+ }
+ 
+ #b-8 {
+    border-bottom: none;
+ }
+ 
+ #b-9 {
+    border-right: none;
+    border-bottom: none;
+ }
+ 
+ 
