@@ -1,4 +1,80 @@
 
+let topLeft = document.getElementById("b-1");
+let topMiddle = document.getElementById("b-2");
+
+let topRight = document.getElementById("b-3");
+// let topMiddle = document.getElementById("b-4");
+
+
+// let topLeft = document.getElementById("b-5");
+// let topMiddle = document.getElementById("b-6");
+
+
+// let topLeft = document.getElementById("b-7");
+// let topMiddle = document.getElementById("b-8");
+// let topMiddle = document.getElementById("b-9");
+
+
+topLeft.addEventListener("click", function () {
+
+    if(positions.player1Turn){
+        topLeft.innerHTML = player1.symbol;
+        gameBoard.row1[0] = "X"
+        console.log(gameBoard)
+        positions.player1Turn = false;
+        positions.player2Turn = true;
+
+    }else {
+        topLeft.innerHTML = player2.symbol;
+        gameBoard.row1[0] = "O"
+        console.log(gameBoard)
+        positions.player1Turn = true;
+        positions.player2Turn = false;
+    }
+      
+  });
+
+
+
+topMiddle.addEventListener("click", function () {
+
+    if(positions.player1Turn){
+        topMiddle.innerHTML = player1.symbol;
+        gameBoard.row1[1] = "X"
+        console.log(gameBoard)
+        positions.player1Turn = false;
+        positions.player2Turn = true;
+
+    }else {
+        topMiddle.innerHTML = player2.symbol;
+        gameBoard.row1[1] = "O"
+        console.log(gameBoard)
+        positions.player1Turn = true;
+        positions.player2Turn = false;
+    }
+      
+  });
+
+  topRight.addEventListener("click", function () {
+
+    if(positions.player1Turn){
+        topRight.innerHTML = player1.symbol;
+        gameBoard.row1[2] = "X"
+        console.log(gameBoard)
+        positions.player1Turn = false;
+        positions.player2Turn = true;
+
+    }else {
+        topRight.innerHTML = player2.symbol;
+        gameBoard.row1[2] = "O"
+        console.log(gameBoard)
+        positions.player1Turn = true;
+        positions.player2Turn = false;
+    }
+      
+  });
+
+
 
 let gameBoard = {
     row1 : [0,1,2],
@@ -9,129 +85,22 @@ let gameBoard = {
 
 
 
-
-function createPlayer(symbol){
-    return {
-        symbol:symbol,
-    }
-}
-
-function choosePlayer(){
-    let player1Symbol = prompt(" Player 1 enter either X or O")
-           
-     if (player1Symbol === "X") {
-          player2Symbol = "O"
-     }else {
-        player1Symbol = "O";
-        player2Symbol = "X";
-     }
-
-    player1 = createPlayer(player1Symbol)
-    player2 = createPlayer(player2Symbol)
-
-
+let player1 =  {
+    symbol : "x",
 
 }
 
-function player1turn(){
-    let oneToEight = prompt(" player 1 enter number from 0 to 8");
-    if (oneToEight === "0"){
-        gameBoard.row1[0] = player1.symbol
-    
-       }else if (oneToEight === "1"){
-        gameBoard.row1[1] = player1.symbol
-       }
-       else if (oneToEight === "2"){
-        gameBoard.row1[2] = player1.symbol
-       }
-       else if (oneToEight === "3"){
-        gameBoard.row2[0] = player1.symbol
-       }
-       else if (oneToEight === "4"){
-        gameBoard.row2[1] = player1.symbol
-       }
-       else if (oneToEight === "5"){
-        gameBoard.row2[2] = player1.symbol
-       }
-       else if (oneToEight === "6"){
-        gameBoard.row3[0] = player1.symbol
-       }
-       else if (oneToEight === "7"){
-        gameBoard.row3[1] = player1.symbol
-       }
-       else if (oneToEight === "8"){
-        gameBoard.row3[2] = player1.symbol
-       }
-       console.log(gameBoard)
-    }
+
+let player2 =  {
+    symbol : "o",
+
+}
+
+console.log(player1.symbol)
 
 
+let positions = {
+   player1Turn : true,
+   player2Turn : false,
+}
 
-
-
-
-    function player2turn(){
-        let oneToEight = prompt(" player 2 enter number from 0 to 8");
-        if (oneToEight === "0"){
-            gameBoard.row1[0] = player2.symbol
-        
-           }else if (oneToEight === "1"){
-            gameBoard.row1[1] = player2.symbol
-           }
-           else if (oneToEight === "2"){
-            gameBoard.row1[2] = player2.symbol
-           }
-           else if (oneToEight === "3"){
-            gameBoard.row2[0] = player2.symbol
-           }
-           else if (oneToEight === "4"){
-            gameBoard.row2[1] = player2.symbol
-           }
-           else if (oneToEight === "5"){
-            gameBoard.row2[2] = player2.symbol
-           }
-           else if (oneToEight === "6"){
-            gameBoard.row3[0] = player2.symbol
-           }
-           else if (oneToEight === "7"){
-            gameBoard.row3[1] = player2.symbol
-           }
-           else if (oneToEight === "8"){
-            gameBoard.row3[2] = player2.symbol
-           }
-           console.log(gameBoard)
-        }
-    
-    
-        function playGame(){
-           player1turn();
-           player2turn();
-           player1turn();
-           player2turn();
-           player1turn();
-           player2turn();
-           player1turn();
-           player2turn();
-           player2turn();
-        }
-        
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-choosePlayer()
-
-
-playGame();
