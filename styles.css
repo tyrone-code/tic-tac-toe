@@ -1,5 +1,8 @@
 *{
     box-sizing: border-box;
+    font-size: 20px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .gameboard-container {
     /* border:5px solid rgb(255, 0, 0); */
@@ -7,6 +10,8 @@
     flex-wrap: wrap;
     width:50%;
     margin: auto;
+    position: relative;
+    top:1rem;
    
 }
 
@@ -26,39 +31,97 @@
    border-top: none;
 }
 
+#b-1 p {
+   font-size: 120px;
+   position:relative;
+   top:-5rem;
+}
+
 
 #b-2 {
 
     border-top: none;
  }
+
+ #b-2 p {
+   font-size: 120px;
+   position:relative;
+   top:-5rem;
+}
+
  
  #b-3 {
     border-top: none;
     border-right:none ;
  }
+
+ #b-3  p{
+   font-size: 120px;
+   position:relative;
+   top:-5rem;
+}
+
  
  
  #b-4 {
     border-left: none;
  }
 
+ #b-4  p{
+   font-size: 120px;
+   position:relative;
+   top:-5rem;
+}
+
+
  /* b-5// nothing */
+ #b-5  p{
+   font-size: 120px;
+   position:relative;
+   top:-5rem;
+}
+
  #b-6 {
     border-right: none;
  }
+
+ #b-6  p{
+   font-size: 120px;
+   position:relative;
+   top:-5rem;
+}
+
 
  #b-7 {
     border-left: none;
     border-bottom: none;
  }
+
+ #b-7  p{
+   font-size: 120px;
+   position:relative;
+   top:-5rem;
+}
+
  
  #b-8 {
     border-bottom: none;
  }
- 
+ #b-8  p{
+   font-size: 120px;
+   position:relative;
+   top:-5rem;
+}
+
  #b-9 {
     border-right: none;
     border-bottom: none;
  }
  
+ #b-9  p{
+   font-size: 120px;
+   position:relative;
+   top:-5rem;
+}
+
  
