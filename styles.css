@@ -29,6 +29,7 @@
 #b-1 {
    border-left: none;
    border-top: none;
+   cursor: pointer;
 }
 
 #b-1 p {
@@ -41,18 +42,22 @@
 #b-2 {
 
     border-top: none;
+    cursor: pointer;
  }
 
  #b-2 p {
    font-size: 120px;
    position:relative;
    top:-5rem;
+   
+   
 }
 
  
  #b-3 {
     border-top: none;
     border-right:none ;
+    cursor: pointer;
  }
 
  #b-3  p{
@@ -65,6 +70,7 @@
  
  #b-4 {
     border-left: none;
+    cursor: pointer;
  }
 
  #b-4  p{
@@ -79,10 +85,12 @@
    font-size: 120px;
    position:relative;
    top:-5rem;
+   cursor: pointer;
 }
 
  #b-6 {
     border-right: none;
+    cursor: pointer;
  }
 
  #b-6  p{
@@ -95,6 +103,7 @@
  #b-7 {
     border-left: none;
     border-bottom: none;
+    cursor: pointer;
  }
 
  #b-7  p{
@@ -106,15 +115,18 @@
  
  #b-8 {
     border-bottom: none;
+    cursor: pointer;
  }
  #b-8  p{
    font-size: 120px;
    position:relative;
    top:-5rem;
+   cursor: pointer;
 }
 
  #b-9 {
     border-right: none;
+    cursor: pointer;
     border-bottom: none;
  }
  
@@ -124,4 +136,3 @@
    top:-5rem;
 }
 
- 
