@@ -8,11 +8,12 @@ let middleRight = document.getElementById("b-6");
 let bottomLeft = document.getElementById("b-7");
 let bottomMiddle = document.getElementById("b-8");
 let bottomRight = document.getElementById("b-9");
-
+let body = document.getElementById("body")
 let h1 = document.getElementById("decideWinner");
-
-
-
+const crossesPoints = document.getElementById("x-points")
+const noughtsPoints = document.getElementById("o-points")
+let xPoints = 0;
+let oPoints = 0;
 
 let gameBoard = {
     row1 : [0,1,2],
@@ -300,180 +301,297 @@ let decideWinner = function(){
   let middleRow = gameBoard.row2.join("");
   let bottomRow = gameBoard.row3.join("")
 
+
+ 
+
    if (topRow === "XXX"){
+      xPoints+= 1;
+      gameBoard = ""
+      crossesPoints.innerHTML = xPoints;
       topLeft.style.backgroundColor = "LightGreen"
       topMiddle.style.backgroundColor = "LightGreen"
       topRight.style.backgroundColor = "LightGreen"
 
       h1.innerHTML = "X is the WINNER!"
       setTimeout(() => {
-        resetValues();
-  
-      }, "2500");
- 
+          
+      body.addEventListener("click",resetValues);
+    
+
+      }, "100");
+
+
    }else if (middleRow === "XXX") {
+    gameBoard = ""
+
+    xPoints+= 1;
+    crossesPoints.innerHTML = xPoints;
     middleLeft.style.backgroundColor = "LightGreen"
     middleMiddle.style.backgroundColor = "LightGreen"
     middleRight.style.backgroundColor = "LightGreen"
     h1.innerHTML = " X is the WINNER!"
     setTimeout(() => {
-      resetValues();
+          
+      body.addEventListener("click",resetValues);
+    
 
-    }, "2500");
-
+      }, "100");
    }
     else if (bottomRow === "XXX") {
+      gameBoard = ""
+
+      xPoints+= 1;
+      crossesPoints.innerHTML = xPoints;
+
       bottomLeft.style.backgroundColor = "LightGreen"
       bottomMiddle.style.backgroundColor = "LightGreen"
       bottomRight.style.backgroundColor = "LightGreen"
        h1.innerHTML = " X is the WINNER!"
        setTimeout(() => {
-        resetValues();
+          
+        body.addEventListener("click",resetValues);
+      
   
-      }, "2500");
- 
+        }, "100");
+
     }
        else if (leftColumn === "XXX") {
+        gameBoard = ""
+
+        xPoints+= 1;
+        crossesPoints.innerHTML = xPoints;
         topLeft.style.backgroundColor = "LightGreen"
         middleLeft.style.backgroundColor = "LightGreen"
         bottomLeft.style.backgroundColor = "LightGreen"
          h1.innerHTML = " X is the WINNER!"
          setTimeout(() => {
-          resetValues();
+          
+          body.addEventListener("click",resetValues);
+        
     
-        }, "2500");
-   
+          }, "100");
        }
          else if (middleColumn === "XXX") {
+          gameBoard = ""
+
+          console.log(middleColumn)
+          xPoints+= 1;
+          crossesPoints.innerHTML = xPoints;
           topMiddle.style.backgroundColor = "LightGreen"
           middleMiddle.style.backgroundColor = "LightGreen"
           bottomMiddle.style.backgroundColor = "LightGreen"
            h1.innerHTML = "X is the WINNER!"
            setTimeout(() => {
-            resetValues();
+          
+            body.addEventListener("click",resetValues);
+          
       
-          }, "2500");
+            }, "100");
      
          }
            else if (rightColumn === "XXX") {
+            gameBoard = ""
+
+            xPoints+= 1;
+            crossesPoints.innerHTML = xPoints;
             topRight.style.backgroundColor = "LightGreen"
             middleRight.style.backgroundColor = "LightGreen"
             bottomRight.style.backgroundColor = "LightGreen"
              h1.innerHTML = "X is the WINNER!"
              setTimeout(() => {
-              resetValues();
+          
+              body.addEventListener("click",resetValues);
+            
         
-            }, "2500");
+              }, "100");
        
 }else if (diagonalTopLeftBottomRight === "XXX") {
+  gameBoard = ""
+
+  xPoints+= 1;
+  crossesPoints.innerHTML = xPoints;
   topLeft.style.backgroundColor = "LightGreen"
   middleMiddle.style.backgroundColor = "LightGreen"
   bottomRight.style.backgroundColor = "LightGreen"
     h1.innerHTML = " X is the WINNER!"
-  setTimeout(() => {
-    resetValues();
+    setTimeout(() => {
+          
+      body.addEventListener("click",resetValues);
+    
 
-  }, "2500");
+      }, "100");
+      
 } else if(diagonalTopRightBottomLeft === "XXX"){
+  gameBoard = ""
+
+  xPoints+= 1;
+  crossesPoints.innerHTML = xPoints;
   topRight.style.backgroundColor = "LightGreen"
   middleMiddle.style.backgroundColor = "LightGreen"
   bottomLeft.style.backgroundColor = "LightGreen"
     h1.innerHTML = " X is the WINNER!"
-  setTimeout(() => {
-    resetValues();
+    setTimeout(() => {
+          
+      body.addEventListener("click",resetValues);
+    
 
-  }, "2500");
+      }, "100");
 }
   else if (middleRow === "OOO") {
+    gameBoard = ""
+
+    oPoints+= 1;
+    noughtsPoints.innerHTML = oPoints;
     middleLeft.style.backgroundColor = "red"
     middleMiddle.style.backgroundColor = "red"
     middleRight.style.backgroundColor = "red"
     h1.innerHTML = "O is the WINNER!"
 
-    setTimeout(() => {
-      resetValues();
 
-    }, "2500");
+    setTimeout(() => {
+          
+      body.addEventListener("click",resetValues);
+    
+
+      }, "100");
 
    } else if (topRow === "OOO") {
+    gameBoard = ""
+
+    oPoints+= 1;
+    noughtsPoints.innerHTML = oPoints;
     topLeft.style.backgroundColor = "red"
     topMiddle.style.backgroundColor = "red"
     topRight.style.backgroundColor = "red"
+    oPoints+= 1;
 
     h1.innerHTML = "O is the WINNER!"
     setTimeout(() => {
-      resetValues();
+          
+      body.addEventListener("click",resetValues);
+    
 
-    }, "2500");
+      }, "100");
+      
    }
     else if (bottomRow === "OOO") {
+      gameBoard = ""
+
+      oPoints+= 1;
+      noughtsPoints.innerHTML = oPoints;
       bottomLeft.style.backgroundColor = "red"
       bottomMiddle.style.backgroundColor = "red"
       bottomRight.style.backgroundColor = "red"
        h1.innerHTML = " O is the WINNER!"
+       oPoints+= 1;
+
        setTimeout(() => {
-        resetValues();
+          
+        body.addEventListener("click",resetValues);
+      
   
-      }, "2500");
- 
+        }, "100");
+       
     }
        else if (leftColumn === "OOO") {
+        gameBoard = ""
+
+        oPoints+= 1;
+        noughtsPoints.innerHTML = oPoints;
         topLeft.style.backgroundColor = "red"
         middleLeft.style.backgroundColor = "red"
         bottomLeft.style.backgroundColor = "red"
          h1.innerHTML = " O is the WINNER!"
+         oPoints+= 1;
+
          setTimeout(() => {
-          resetValues();
+          
+          body.addEventListener("click",resetValues);
+        
     
-        }, "2500");
-   
+          }, "100");
+ 
+
        }
          else if (middleColumn === "OOO") {
+          gameBoard = ""
+
+          oPoints+= 1;
+          noughtsPoints.innerHTML = oPoints;
           topMiddle.style.backgroundColor = "red"
           middleMiddle.style.backgroundColor = "red"
           bottomMiddle.style.backgroundColor = "red"
            h1.innerHTML = "O is the WINNER!"
+           oPoints+= 1;
+
            setTimeout(() => {
-            resetValues();
+          
+            body.addEventListener("click",resetValues);
+          
       
-          }, "2500");
-     
+            }, "100");
+
          }
            else if (rightColumn === "OOO") {
+            gameBoard = ""
+
+            oPoints+= 1;
+            noughtsPoints.innerHTML = oPoints;
             topRight.style.backgroundColor = "red"
             middleRight.style.backgroundColor = "red"
             bottomRight.style.backgroundColor = "red"
              h1.innerHTML = "O is the WINNER!"
+             oPoints+= 1;
+
              setTimeout(() => {
-              resetValues();
+          
+              body.addEventListener("click",resetValues);
+            
         
-            }, "2500");
-       
+              }, "100");
+
 }else if (diagonalTopLeftBottomRight === "OOO") {
+  gameBoard = ""
+
+  oPoints+= 1;
+  noughtsPoints.innerHTML = oPoints;
   topLeft.style.backgroundColor = "red"
   middleMiddle.style.backgroundColor = "red"
   bottomRight.style.backgroundColor = "red"
     h1.innerHTML = " O is the WINNER!"
-  setTimeout(() => {
-    resetValues();
 
-  }, "2500");
+    setTimeout(() => {
+          
+      body.addEventListener("click",resetValues);
+    
+
+      }, "100");
+
 
 } else if (diagonalTopRightBottomLeft === "OOO"){
+  gameBoard = ""
+
+  oPoints+= 1;
+  noughtsPoints.innerHTML = oPoints;
   topRight.style.backgroundColor = "red"
   middleMiddle.style.backgroundColor = "red"
   bottomLeft.style.backgroundColor = "red"
     h1.innerHTML = " O is the WINNER!"
-  setTimeout(() => {
-    resetValues();
 
-  }, "2500");
+    setTimeout(() => {
+          
+      body.addEventListener("click",resetValues);
+    
+
+      }, "100");
+
 }
 
 
   }
 
 function resetValues(){
+  body.removeEventListener('click', resetValues);
   player1.playerTurn = true; 
   player2.playerTurn = false;
   
@@ -511,4 +629,10 @@ function resetValues(){
     row2 : [0,1,2],
     row3 : [0,1,2]
 }
+}
+
+function calculatePoints(){
+
+
+  
 }
