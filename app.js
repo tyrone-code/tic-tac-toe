@@ -179,10 +179,10 @@ middleRight.addEventListener("click", function () {
    gameBoard.row2[2] = player2.symbol;
    player2.playerTurn = false;
     player1.playerTurn = true;     
+    h1.innerHTML = "X's TURN"
 
     decideWinner();
 
-    h1.innerHTML = "X's TURN"
 
 } });
 
@@ -273,8 +273,14 @@ let decideWinner = function(){
   let diagonal1 = gameBoard.row1[0]
   let diagonal2 = gameBoard.row2[1]
   let diagonal3 = gameBoard.row3[2]
+  let diagonal4 = gameBoard.row1[2]
+  let diagonal5 = gameBoard.row2[1]
+  let diagonal6 = gameBoard.row3[0]
   let captureDiagonal = [diagonal1, diagonal2 , diagonal3]
+  let captureDiagonal2 = [diagonal4, diagonal5 , diagonal6]
+
   let diagonalTopLeftBottomRight =  captureDiagonal.join("")
+  let diagonalTopRightBottomLeft = captureDiagonal2.join("")
   let column1Left = gameBoard.row1[0];
   let column2Left = gameBoard.row2[0];
   let column3Left = gameBoard.row3[0];
@@ -363,12 +369,105 @@ let decideWinner = function(){
   topLeft.style.backgroundColor = "LightGreen"
   middleMiddle.style.backgroundColor = "LightGreen"
   bottomRight.style.backgroundColor = "LightGreen"
+    h1.innerHTML = " X is the WINNER!"
+  setTimeout(() => {
+    resetValues();
+
+  }, "2500");
+} else if(diagonalTopRightBottomLeft === "XXX"){
+  topRight.style.backgroundColor = "LightGreen"
+  middleMiddle.style.backgroundColor = "LightGreen"
+  bottomLeft.style.backgroundColor = "LightGreen"
+    h1.innerHTML = " X is the WINNER!"
+  setTimeout(() => {
+    resetValues();
+
+  }, "2500");
+}
+  else if (middleRow === "OOO") {
+    middleLeft.style.backgroundColor = "red"
+    middleMiddle.style.backgroundColor = "red"
+    middleRight.style.backgroundColor = "red"
+    h1.innerHTML = "O is the WINNER!"
+
+    setTimeout(() => {
+      resetValues();
+
+    }, "2500");
+
+   } else if (topRow === "OOO") {
+    topLeft.style.backgroundColor = "red"
+    topMiddle.style.backgroundColor = "red"
+    topRight.style.backgroundColor = "red"
+
+    h1.innerHTML = "O is the WINNER!"
+    setTimeout(() => {
+      resetValues();
+
+    }, "2500");
+   }
+    else if (bottomRow === "OOO") {
+      bottomLeft.style.backgroundColor = "red"
+      bottomMiddle.style.backgroundColor = "red"
+      bottomRight.style.backgroundColor = "red"
+       h1.innerHTML = " O is the WINNER!"
+       setTimeout(() => {
+        resetValues();
+  
+      }, "2500");
+ 
+    }
+       else if (leftColumn === "OOO") {
+        topLeft.style.backgroundColor = "red"
+        middleLeft.style.backgroundColor = "red"
+        bottomLeft.style.backgroundColor = "red"
+         h1.innerHTML = " O is the WINNER!"
+         setTimeout(() => {
+          resetValues();
+    
+        }, "2500");
+   
+       }
+         else if (middleColumn === "OOO") {
+          topMiddle.style.backgroundColor = "red"
+          middleMiddle.style.backgroundColor = "red"
+          bottomMiddle.style.backgroundColor = "red"
+           h1.innerHTML = "O is the WINNER!"
+           setTimeout(() => {
+            resetValues();
+      
+          }, "2500");
+     
+         }
+           else if (rightColumn === "OOO") {
+            topRight.style.backgroundColor = "red"
+            middleRight.style.backgroundColor = "red"
+            bottomRight.style.backgroundColor = "red"
+             h1.innerHTML = "O is the WINNER!"
+             setTimeout(() => {
+              resetValues();
+        
+            }, "2500");
+       
+}else if (diagonalTopLeftBottomRight === "OOO") {
+  topLeft.style.backgroundColor = "red"
+  middleMiddle.style.backgroundColor = "red"
+  bottomRight.style.backgroundColor = "red"
+    h1.innerHTML = " O is the WINNER!"
   setTimeout(() => {
     resetValues();
 
   }, "2500");
 
-  h1.innerHTML = " X is the WINNER!"
+} else if (diagonalTopRightBottomLeft === "OOO"){
+  topRight.style.backgroundColor = "red"
+  middleMiddle.style.backgroundColor = "red"
+  bottomLeft.style.backgroundColor = "red"
+    h1.innerHTML = " O is the WINNER!"
+  setTimeout(() => {
+    resetValues();
+
+  }, "2500");
 }
 
 
@@ -378,7 +477,7 @@ function resetValues(){
   player1.playerTurn = true; 
   player2.playerTurn = false;
   
-  h1.innerHTML = ""
+  h1.innerHTML = "X's TURN"
 
   topLeft.innerHTML = ""
   topMiddle.innerHTML = ""
