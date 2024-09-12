@@ -20,7 +20,7 @@
 
 .block {
     border:5px solid rgb(0, 0, 0);
-    height:10rem; 
+    height:9rem; 
     flex: 0 0 33.3333%;
    
 }
@@ -136,3 +136,10 @@
    top:-5rem;
 }
 
+
+h1 {
+   position:relative;
+   top:1rem;
+   font-size: 2rem;
+
+}
