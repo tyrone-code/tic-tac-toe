@@ -20,7 +20,7 @@
 
 .block {
     border:5px solid rgb(0, 0, 0);
-    height:9rem; 
+    height:8.2rem; 
     flex: 0 0 33.3333%;
    
 }
@@ -80,7 +80,9 @@
 }
 
 
- /* b-5// nothing */
+ #b-5 {
+   cursor:pointer
+ }
  #b-5  p{
    font-size: 120px;
    position:relative;
@@ -165,7 +167,7 @@ h1 {
 }
 
 #o-points  {
-   font-size: 40px;
+   font-size: 32px;
 }
 
 
@@ -182,4 +184,12 @@ h1 {
    position: absolute;
    right:4rem;
    top:3rem;
+}
+
+.gameboard-container div.block:hover {
+   background-color: rgb(202, 202, 202);
+}
+
+button {
+ cursor: pointer;
 }

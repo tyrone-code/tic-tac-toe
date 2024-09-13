@@ -12,6 +12,7 @@ let body = document.getElementById("body")
 let h1 = document.getElementById("decideWinner");
 const crossesPoints = document.getElementById("x-points")
 const noughtsPoints = document.getElementById("o-points")
+let reset = document.getElementById("reset")
 let xPoints = 0;
 let oPoints = 0;
 
@@ -268,6 +269,9 @@ bottomRight.addEventListener("click", function () {
 
 } });
 
+reset.addEventListener("click", function () {
+  window.location.reload();
+})
 
 
 let decideWinner = function(){
@@ -300,7 +304,17 @@ let decideWinner = function(){
   let topRow = gameBoard.row1.join("");
   let middleRow = gameBoard.row2.join("");
   let bottomRow = gameBoard.row3.join("")
-
+let topLeftVal = gameBoard.row1.includes(0);
+let topMiddleVal = gameBoard.row1.includes(1);
+let topRightVal = gameBoard.row1.includes(2);
+//
+let middleLeftVal = gameBoard.row2.includes(0);
+let middleMiddleVal = gameBoard.row2.includes(1);
+let middleRightVal = gameBoard.row2.includes(2);
+//
+let bottomLeftVal = gameBoard.row3.includes(0);
+let bottomMiddleVal = gameBoard.row3.includes(1);
+let bottomRightVal = gameBoard.row3.includes(2);
 
  
 
@@ -463,7 +477,6 @@ let decideWinner = function(){
     topLeft.style.backgroundColor = "red"
     topMiddle.style.backgroundColor = "red"
     topRight.style.backgroundColor = "red"
-    oPoints+= 1;
 
     h1.innerHTML = "O is the WINNER!"
     setTimeout(() => {
@@ -483,7 +496,6 @@ let decideWinner = function(){
       bottomMiddle.style.backgroundColor = "red"
       bottomRight.style.backgroundColor = "red"
        h1.innerHTML = " O is the WINNER!"
-       oPoints+= 1;
 
        setTimeout(() => {
           
@@ -502,7 +514,6 @@ let decideWinner = function(){
         middleLeft.style.backgroundColor = "red"
         bottomLeft.style.backgroundColor = "red"
          h1.innerHTML = " O is the WINNER!"
-         oPoints+= 1;
 
          setTimeout(() => {
           
@@ -522,7 +533,6 @@ let decideWinner = function(){
           middleMiddle.style.backgroundColor = "red"
           bottomMiddle.style.backgroundColor = "red"
            h1.innerHTML = "O is the WINNER!"
-           oPoints+= 1;
 
            setTimeout(() => {
           
@@ -541,7 +551,7 @@ let decideWinner = function(){
             middleRight.style.backgroundColor = "red"
             bottomRight.style.backgroundColor = "red"
              h1.innerHTML = "O is the WINNER!"
-             oPoints+= 1;
+        
 
              setTimeout(() => {
           
@@ -585,6 +595,14 @@ let decideWinner = function(){
 
       }, "100");
 
+} else if (!topLeftVal && !topMiddleVal && !topRightVal && !middleLeftVal && !middleMiddleVal && !middleRightVal && !bottomLeftVal && !bottomMiddleVal && !bottomRightVal) {
+  h1.innerHTML = "Its a Draw"
+  setTimeout(() => {
+          
+    body.addEventListener("click",resetValues);
+  
+
+    }, "100");
 }
 
 
@@ -631,8 +649,4 @@ function resetValues(){
 }
 }
 
-function calculatePoints(){
 
-
-  
-}
